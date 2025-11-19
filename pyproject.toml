@@ -1,0 +1,22 @@
+[project]
+name = "gpt1"
+version = "0.1.0"
+description = "Reference implementation for integrating hosted and local LLMs"
+authors = [{ name = "Example" }]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.23",
+    "pydantic>=2.5",
+    "requests>=2.31",
+    "transformers>=4.35",
+    "torch>=2.1",
+]
+
+[project.optional-dependencies]
+dev = ["httpx"]
+
+[build-system]
+requires = ["setuptools>=67", "wheel"]
+build-backend = "setuptools.build_meta"
