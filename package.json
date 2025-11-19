@@ -1,0 +1,9 @@
+{
+  "name": "ai-session-console",
+  "version": "1.0.0",
+  "description": "Chat-like interface that streams AI and browser logs via REST + WebSocket",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

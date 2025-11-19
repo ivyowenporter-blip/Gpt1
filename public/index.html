@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Session Console</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">Live automation console</p>
+          <h1>AI + Browser Orchestrator</h1>
+        </div>
+        <div class="session-controls">
+          <div class="status-indicator" id="session-indicator">No session</div>
+          <button id="start-session" class="btn primary">Start Session</button>
+          <button id="stop-session" class="btn" disabled>Stop Session</button>
+        </div>
+      </header>
+
+      <section class="layout">
+        <section class="chat-panel">
+          <div class="panel-heading">
+            <h2>Conversation + Actions</h2>
+            <span id="session-label" class="session-label">No active session</span>
+          </div>
+          <div class="log-list" id="log-list"></div>
+          <form id="command-form" class="command-form">
+            <label for="command-input">Send command</label>
+            <div class="input-row">
+              <input
+                id="command-input"
+                type="text"
+                placeholder="Describe the next action"
+                autocomplete="off"
+              />
+              <button type="submit" class="btn primary">Send</button>
+            </div>
+            <p class="form-hint">Commands are streamed live via REST + WebSocket updates.</p>
+          </form>
+        </section>
+
+        <section class="render-panel">
+          <div class="panel-heading">
+            <h2>Render Preview</h2>
+            <span class="session-label subtle">Screenshots or HTML</span>
+          </div>
+          <div id="render-target" class="render-target">
+            <div class="render-placeholder">
+              Waiting for automation output…
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <template id="log-entry-template">
+      <article class="log-entry">
+        <header class="log-meta">
+          <span class="log-role"></span>
+          <time class="log-time"></time>
+        </header>
+        <div class="log-content"></div>
+        <pre class="log-action hidden"></pre>
+      </article>
+    </template>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
